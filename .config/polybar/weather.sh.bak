@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Imposta la tua città
+CITY="Firenze"
+
+# Ottieni i dati meteo da wttr.in
+METEO=$(curl -s "wttr.in/$CITY?format=%C+%t")
+WINDKM=$(curl -s "wttr.in/?format=%w")
+
+# Estrai la descrizione del meteo e la temperatura
+CONDITION=$(echo "$METEO" | awk '{print $1}')
+TEMP=$(echo "$METEO" | awk '{print $2}')
+
+# Mappatura delle condizioni meteo alle icone
+case "$CONDITION" in
+"Clear")
+  ICON="" # Sole
+  ;;
+"Sunny")
+  ICON="" # Sole
+  ;;
+"Cloudy")
+  ICON="" # Nuvoloso
+  ;;
+"Partly cloudy")
+  ICON="" # Parzialmente Nuvoloso
+  ;;
+"Overcast")
+  ICON="" # Nuvoloso
+  ;;
+"Rain")
+  ICON="" # Pioggia
+  ;;
+"Drizzle")
+  ICON="" # Pioviggine
+  ;;
+"Thunderstorm")
+  ICON="" # Temporale
+  ;;
+"Snow")
+  ICON="" # Neve
+  ;;
+*)
+  ICON=" " # Se non riconosciamo la condizione, mettiamo nulla
+  ;;
+esac
+
+# Mostra icona meteo e temperatura
+echo "$CITY $ICON $METEO $WINDKM"
