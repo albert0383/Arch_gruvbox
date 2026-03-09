@@ -1,0 +1,30 @@
+* {
+    bg:      #282828;
+    fg:      #ebdbb2;
+    red:     #cc241d;
+    yellow:  #d79921;
+    green:   #98971a;
+}
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @yellow;
+    border-radius: 8px;
+    width: 350px;
+}
+
+mainbox {
+    background-color: @bg;
+}
+
+listview {
+    background-color: @bg;
+    spacing: 5px;
+}
+
+element {
+    background-color: @bg;
+    text-color: @fg;
+    font: "Departure Mono Nerd Font 11";
+}

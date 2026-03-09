@@ -203,6 +203,8 @@ exec --no-startup-id numlockx on
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id dunst
+# exec --no-startup-id export QT_QPA_PLATFORMTHEME=qt5ct
+# exec --no-startup-id export QT_STYLE_OVERRIDE=kvantum
 
 
 # for_window [class=".*"] border none
@@ -225,3 +227,5 @@ gaps outer 2
 for_window [class="Ipython"] floating enable
 for_window [class="R_x11"] floating enable
 for_window [class="Yad"] floating enable
+
+for_window [class="^.*" instance="^.*" title="Figure"] floating enable
